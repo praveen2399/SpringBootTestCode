@@ -2,6 +2,7 @@ package com.tcs.fresco;
 
 import static org.hamcrest.Matchers.hasSize;
 import static org.junit.Assert.*;
+import static org.mockito.Mockito.mock;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -19,12 +20,15 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
@@ -36,12 +40,20 @@ import org.springframework.test.context.web.WebAppConfiguration;
 
 // Make necessary annotations.
 //Write annotations here
+@RunWith(SpringRunner.class)
+@WebAppConfiguration
 public class AuthControllerTest {
 
     //write necessary mockmvc objects and autowired context
 	
     //Write your code here
-	    
+	
+	@Autowired
+	private WebApplicationContext context;
+	
+	
+	MockMvc mockmvc;
+	
      @InjectMocks
  private AuthenticationController authenticationController;
      @InjectMocks
@@ -51,6 +63,8 @@ public class AuthControllerTest {
 		public void setup() {
 			// Make necessary mockmvc instance
             // Write your code here
+			mockmvc = MockMvcBuilders.webAppContextSetup(context).build();
+			
 		}
 		
 		
@@ -59,6 +73,15 @@ public class AuthControllerTest {
 			
 			// Create test case to validate user "Dave".
 			// Write your code here
+			String user="Dave";
+			
+			mockmvc.perform(MockMvcRequestBuilders.get("/validate/"+user)
+		 			.contentType(MediaType.TEXT_PLAIN)
+					.accept(MediaType.TEXT_PLAIN))
+					.andExpect(status().isOk())
+					.andExpect(content().string("Valid"));
+			
+
 		}
 		
     @Configuration
