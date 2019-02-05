@@ -1,10 +1,10 @@
 package com.hackerrank.sample.controller;
 
 import com.hackerrank.sample.model.Customer;
-import com.hackerrank.sample.model.Model;
+
 import com.hackerrank.sample.model.Vendor;
 import com.hackerrank.sample.service.CustomerService;
-import com.hackerrank.sample.service.ModelService;
+
 import com.hackerrank.sample.service.VendorService;
 
 import java.util.List;

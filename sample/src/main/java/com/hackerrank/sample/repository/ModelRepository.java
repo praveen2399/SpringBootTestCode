@@ -1,4 +1,4 @@
-package com.hackerrank.sample.repository;
+/*package com.hackerrank.sample.repository;
 
 import com.hackerrank.sample.model.Model;
 import javax.transaction.Transactional;
@@ -10,3 +10,4 @@ public interface ModelRepository extends JpaRepository<Model, Long> {
     @Transactional
     Long deleteById(Long id);
 }
+*/

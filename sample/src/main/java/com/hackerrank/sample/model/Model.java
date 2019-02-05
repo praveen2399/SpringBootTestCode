@@ -1,4 +1,4 @@
-package com.hackerrank.sample.model;
+/*package com.hackerrank.sample.model;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
@@ -35,3 +35,4 @@ public class Model implements Serializable {
         this.name = name;
     }
 }
+*/

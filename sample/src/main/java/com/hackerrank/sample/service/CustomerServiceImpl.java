@@ -8,9 +8,9 @@ import org.springframework.stereotype.Service;
 import com.hackerrank.sample.excpetion.BadResourceRequestException;
 import com.hackerrank.sample.excpetion.NoSuchResourceFoundException;
 import com.hackerrank.sample.model.Customer;
-import com.hackerrank.sample.model.Model;
+
 import com.hackerrank.sample.repository.CustomerRepository;
-import com.hackerrank.sample.repository.ModelRepository;
+
 
 @Service
 public class CustomerServiceImpl implements CustomerService {

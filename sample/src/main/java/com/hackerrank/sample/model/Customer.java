@@ -2,13 +2,16 @@ package com.hackerrank.sample.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="customer")
 //@SequenceGenerator(name = "customer_seq", sequenceName = "customer_seq", allocationSize = 1)
 public class Customer implements Serializable {
 	

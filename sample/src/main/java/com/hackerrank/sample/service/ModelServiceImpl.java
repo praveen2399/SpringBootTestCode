@@ -1,4 +1,4 @@
-package com.hackerrank.sample.service;
+/*package com.hackerrank.sample.service;
 
 import com.hackerrank.sample.excpetion.BadResourceRequestException;
 import com.hackerrank.sample.excpetion.NoSuchResourceFoundException;
@@ -50,3 +50,4 @@ public class ModelServiceImpl implements ModelService {
         return modelRepository.findAll();
     }
 }
+*/
